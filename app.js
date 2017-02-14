@@ -23,7 +23,7 @@ app.use(express.static(__dirname + '/public'));
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
 
-app.get(express.static('/process_get', function(req,res)){
+app.get('/process_get', function(req,res){
 	//output in JSON Format
 	response = {
 		latitude:req.query.latitude,
