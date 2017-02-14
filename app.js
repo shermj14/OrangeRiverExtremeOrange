@@ -7,6 +7,8 @@
 // This application uses express as its web server
 // for more info, see: http://expressjs.com
 var express = require('express');
+	request = require('request'),
+	_= require('lodash');
 
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https://www.npmjs.com/package/cfenv
@@ -20,6 +22,22 @@ app.use(express.static(__dirname + '/public'));
 
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
+
+app.get(express.static('/process_get', function(req,res)){
+	response = {
+		lattitude:req.query.lattitude,
+		longitude:req.query.longitude
+	};
+	
+	var callURL = "https://d8d775bd-d009-4709-b9f5-e0da76a5ebc6:ukxwFlxUKf@twcservice.mybluemix.net/api/weather/v1/geocode/"+response.lattitude+"/"+response.longitude+"/forecast/hourly/48hour.json?units=m&language=en-US"
+	
+	request.get(callURL, {
+		json: true
+	},
+	function (error, response, body){
+		console.log(body)
+	});
+})
 
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
