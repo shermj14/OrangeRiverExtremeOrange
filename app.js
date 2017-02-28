@@ -38,8 +38,8 @@ app.get('/process_get', function (req, res) {
       },
       function (error, response, body) {
        console.log(body);
-	   var obj = JSON.parse(body);
-	   document.write(obj.precip_type);
+	   //var obj = JSON.parse(body);
+	   //document.write(obj.precip_type);
       });
 })
 
