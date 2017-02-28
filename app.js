@@ -39,7 +39,7 @@ app.get('/process_get', function (req, res) {
       function (error, response, body) {
        console.log(body);
 	   obj = JSON.parse(body);
-	   document.write(obj.precip_type);
+	   //document.write(obj.precip_type);
       });
 })
 
