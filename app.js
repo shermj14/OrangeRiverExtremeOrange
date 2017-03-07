@@ -37,9 +37,9 @@ app.get('/process_get', function (req, res) {
         json: true
       },
       function (error, response, body) {
-		var meta = body.getJSONObject("meta");
-		var id = meta.GetString("id");
-		console.log(id);
+		console.log(body);
+		//var meta = body.getJSONObject("meta");
+		//var id = meta.GetString("id");
 	    //document.write(id);
       });
 })
