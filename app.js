@@ -37,7 +37,7 @@ app.get('/process_get', function (req, res) {
         json: true
       },
       function (error, response, body) {
-		console.log(body["metadata"]["transaction_id"]);
+		console.log(body["metadata"]);
 	    //document.write(body.precip_type);
       });
 })
