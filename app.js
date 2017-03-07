@@ -37,7 +37,7 @@ app.get('/process_get', function (req, res) {
         json: true
       },
       function (error, response, body) {
-		console.log(body["phrase_32char"]);
+		console.log(body["fcst_valid"]);
 	    //document.write(body.precip_type);
       });
 })
