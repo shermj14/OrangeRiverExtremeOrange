@@ -37,8 +37,8 @@ app.get('/process_get', function (req, res) {
         json: true
       },
       function (error, response, body) {
-		JSONObject meta = body.getJSONObject("meta");
-		console.log(meta);
+		//JSONObject meta = body.getJSONObject("meta");
+		console.log(body);
 	    //document.write(id);
       });
 })
