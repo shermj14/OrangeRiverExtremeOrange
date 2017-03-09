@@ -31,7 +31,7 @@ app.get('/process_get', function (req, res) {
       longitude:req.query.longitude
      };
                      
-      var callURL = "https://d8d775bd-d009-4709-b9f5-e0da76a5ebc6:ukxwFlxUKf@twcservice.mybluemix.net/api/weather/v1/geocode/"+response.latitude+"/"+response.longitude+"/forecast/hourly/48hour.json?units=m&language=en-US"
+      var callURL = "https://d8d775bd-d009-4709-b9f5-e0da76a5ebc6:ukxwFlxUKf@twcservice.mybluemix.net/api/weather/v1/geocode/"+response.latitude+"/"+response.longitude+"/almanac/daily.json?units=e&start=0112&end=0115"
 
       request.get(callURL, {
         json: true
