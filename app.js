@@ -42,7 +42,7 @@ app.get('/process_get', function (req, res) {
 		} else {
 			var meta = body["metadata"];
 			var id = meta["transaction_id"]
-			res.send(id);
+			res.send(body);
 		}
 
       });
