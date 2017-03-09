@@ -38,8 +38,7 @@ app.get('/process_get', function (req, res) {
       },
       function (error, response, body) {
 		var meta = body["metadata"];
-		//String id = meta[transaction_id];
-		console.log(meta);
+		console.log(meta["transaction_id"]);
 	    //document.write(id);
       });
 })
