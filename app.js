@@ -37,7 +37,7 @@ app.get('/process_get', function (req, res) {
         json: true
       },
       function (error, response, body) {
-		JSONObject meta = body["metadata"];
+		var meta = body["metadata"];
 		//String id = meta[transaction_id];
 		console.log(meta);
 	    //document.write(id);
