@@ -40,7 +40,7 @@ app.get('/process_get', function (req, res) {
 		var meta = body["metadata"];
 		var id = meta["transaction_id"]
 		console.log(id);
-	    alert(id);
+	    response.Write(id);
       });
 })
 
