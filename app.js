@@ -38,8 +38,8 @@ app.get('/process_get', function (req, res) {
       },
       function (error, response, body) {
 		JSONObject meta = body["metadata"];
-		String id = meta[transaction_id];
-		console.log(id);
+		//String id = meta[transaction_id];
+		console.log(meta);
 	    //document.write(id);
       });
 })
