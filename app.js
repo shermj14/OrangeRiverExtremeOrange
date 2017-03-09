@@ -28,10 +28,12 @@ app.get('/process_get', function (req, res) {
    // Prepare output in JSON format
    response = {
       latitude:req.query.latitude,
-      longitude:req.query.longitude
+      longitude:req.query.longitude,
+	  startDate:req.query.startDate,
+	  endDate:req.query.endDate;
      };
                      
-      var callURL = "https://d8d775bd-d009-4709-b9f5-e0da76a5ebc6:ukxwFlxUKf@twcservice.mybluemix.net/api/weather/v1/geocode/"+response.latitude+"/"+response.longitude+"/almanac/daily.json?units=e&start=0112&end=0115"
+      var callURL = "https://d8d775bd-d009-4709-b9f5-e0da76a5ebc6:ukxwFlxUKf@twcservice.mybluemix.net/api/weather/v1/geocode/"+response.latitude+"/"+response.longitude+"/almanac/daily.json?units=e&start="+response.startDate+"&end="+response.endDate
 
       request.get(callURL, {
         json: true
@@ -40,8 +42,8 @@ app.get('/process_get', function (req, res) {
 		if(error){
 			console.log(error);
 		} else {
-			var meta = body["metadata"];
-			var id = meta["transaction_id"]
+			//var meta = body["metadata"];
+			//var id = meta["transaction_id"];
 			res.send(body);
 		}
 
