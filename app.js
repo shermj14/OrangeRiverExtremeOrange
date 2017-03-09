@@ -37,10 +37,14 @@ app.get('/process_get', function (req, res) {
         json: true
       },
       function (error, response, body) {
-		var meta = body["metadata"];
-		var id = meta["transaction_id"]
-		console.log(id);
-	    //response.Write(id);
+		if(error){
+			console.log(error);
+		} else {
+			var meta = body["metadata"];
+			var id = meta["transaction_id"]
+			res.send(id);
+		}
+
       });
 })
 
